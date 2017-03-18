@@ -1,5 +1,5 @@
-<div>
-  <h1>{{ $ctrl.name }}</h1>
-  <h1>YOLO{{$ctrl.age}}</h1>
-</div>
-<img ng-src="{{$ctrl.src}}" />
+<a ui-sref="{{$ctrl.link}}" class="app-icon-link">
+  <img class="icon-img" alt="{{$ctrl.alt}}" ng-src="{{$ctrl.src}}" />
+  <h1 class="title">{{$ctrl.title}}</h1>
+</a>
+

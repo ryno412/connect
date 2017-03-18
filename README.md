@@ -1,5 +1,3 @@
- looking for a preliminary [Angular 2](https://angular.io/) build, please use the [angular2-webpack-starter](https://github.com/angularclass/angular2-webpack-starter).
-___
 
 # Table of Contents
 * [Walkthrough](#walkthrough)

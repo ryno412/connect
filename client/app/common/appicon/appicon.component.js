@@ -5,8 +5,10 @@ import './appicon.scss';
 let appiconComponent = {
   restrict: 'E',
   bindings: {
-    age : '@age',
-    src: '@src'
+    alt: '@alt',
+    link: '@link',
+    src: '@src',
+    title: '@title'
   },
   template,
   controller
