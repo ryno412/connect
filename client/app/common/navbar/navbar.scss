@@ -1,18 +1,15 @@
 @import '../common';
 
 .navbar {
-  height: 6.5rem;
-  background-color: $primaryColor;
-  padding: 1rem;
-
-  .nav-links,
+  height: 50px;
+  padding: 20px;
+  box-sizing: border-box;
   .logo {
     display: inline-block;
-  }
-
-  .logo {
-    color: $lightTextColor;
-    margin-right: 50%;
+    background: url('../../assets/imgs/logo.png') no-repeat 0 -15px;
+    background-size:134px 30px;
+    text-indent: -9999px;
+    width:200px;
   }
 
   .nav-links span {
