@@ -8,6 +8,12 @@ config.output = {
   path: path.resolve(__dirname, 'client')
 };
 
+config.proxy =   {
+  context: ['/api/**', '/api-v2/**'],
+  target: 'http://localhost:5000',
+  secure: false
+}
+
 config.plugins = config.plugins.concat([
 
   // Adds webpack HMR support. It act's like livereload,

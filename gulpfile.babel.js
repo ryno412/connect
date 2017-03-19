@@ -16,6 +16,7 @@ import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import colorsSupported      from 'supports-color';
 import historyApiFallback   from 'connect-history-api-fallback';
+import proxyMiddleware from 'http-proxy-middleware';
 
 let root = 'client';
 
@@ -67,6 +68,7 @@ gulp.task('webpack', ['clean'], (cb) => {
 
 gulp.task('serve', () => {
   const config = require('./webpack.dev.config');
+  const mockServer = require('./server')
   config.entry.app = [
     // this modules required to make HRM working
     // it responsible for all this webpack magic
@@ -75,6 +77,7 @@ gulp.task('serve', () => {
   ].concat(paths.entry);
 
   var compiler = webpack(config);
+
 
   serve({
     port: process.env.PORT || 3000,
@@ -90,7 +93,8 @@ gulp.task('serve', () => {
         },
         publicPath: config.output.publicPath
       }),
-      webpackHotMiddleware(compiler)
+      webpackHotMiddleware(compiler),
+      proxyMiddleware(config.proxy)
     ]
   });
 });
