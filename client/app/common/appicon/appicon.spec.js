@@ -54,17 +54,19 @@ describe.only('Appicon', () => {
 
   describe.only('View', () => {
     // view layer specs.
-    let scope, template;
+    let scope;
 
     beforeEach(() => {
       scope = $rootScope.$new();
-      template = $compile('<appicon alt="YOLO"></appicon>')(scope);
-      scope.$apply();
+
     });
 
-    it('has name in template', () => {
-      console.log("$$$",template)
-      //expect(template.find('h1').html()).to.eq('Found in home.html');
+    it('should bind link', () => {
+      const link = '/link-to-some-page';
+      let template = $compile('<appicon link="/link-to-some-page"></appicon>')(scope);
+      scope.$apply();
+      expect(template.find('a').hasClass('app-icon-link')).to.be.true;
+      expect(template.find('a').attr('ui-sref')).to.eql('/link-to-some-page')
     });
 
   });
