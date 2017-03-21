@@ -6,10 +6,10 @@ class MyappsController {
         this.apps = res.data;
       }
       else {
-        throw new Error('No Apps in respons')
+        throw new Error('No Apps in response');
       }
     }).catch(e => {
-      console.log("E",e)
+      console.log("E", e);
     })
   }
 }

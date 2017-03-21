@@ -5,10 +5,12 @@
     display: inline-block; margin:0 auto;
     background: url('../../assets/imgs/ios-icon-default.png') no-repeat; }
   .app-list-item {float:left; width: 25%; margin-right: 10px; border-right: 1px solid rgba(229,229,229,0.5);
-    text-align:center; list-style: none; padding: 40px 15px;
+    text-align:center; list-style: none; padding: 40px 20px;
+    &:last-child {border-right:none;}
   }
-  .app-name {color:#4c4c4c; font-size: 21px; font-weight: 100; margin-top:10px;}
+  .app-details-link {text-decoration: none;}
+  .app-name {color:#4c4c4c; font-size: 21px; font-weight: 100; margin-top:10px; text-decoration: none;}
   .circle {width:10px; height:10px; border-radius:50%; background: yellow; display: inline-block; margin-right:5px;}
-  .app-version-link {font-size:12px;}
+  .app-version-link {font-size:12px; text-decoration: none; color:$contentColor;}
   .app-type {font-weight: bold;}
 }

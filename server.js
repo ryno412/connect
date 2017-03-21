@@ -12,16 +12,18 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.route('/api/api-my-app').get(function (req, res) {
   res.send([
     {
+      id:1,
       icon: 'default',
-      name: 'myCoolApp',
-      type: 'watch',
+      name: 'My Cool App',
+      type: 'Watch',
       version: '1.0',
       submissionState: 'Prepare for Submission'
     },
     {
+      id: 2,
       icon: 'default',
-      name: 'my notSoCoolApp',
-      type: 'ios',
+      name: 'My Not So Cool App',
+      type: 'IOS',
       version: '1.0',
       submissionState: 'Review'
     }
