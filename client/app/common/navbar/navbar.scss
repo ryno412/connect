@@ -1,19 +1,26 @@
 @import '../common';
 
-.navbar {
-  height: 50px;
-  padding: 20px;
-  box-sizing: border-box;
-  .logo {
-    display: inline-block;
-    background: url('../../assets/imgs/logo.png') no-repeat 0 -15px;
-    background-size:134px 30px;
-    text-indent: -9999px;
-    width:200px;
+.navbar {padding:15px 0 5px 30px; border-bottom: 1px solid $borderColor;
+  .logo {display: inline-block; background: url('../../assets/imgs/logo.png') no-repeat;
+    background-size:134px 30px; text-indent: -9999px; width:140px; float:left; margin-right:5px;
+    .logo-name {margin: 0; font-size:16px;}
   }
-
-  .nav-links span {
-    color: $lightTextColor;
-    font-size: 1.6rem;
+  .my-apps-drop-down-heading {margin-top: 0; color:$linkColor; font-size:21px; font-weight: 100; line-height: 16px;
+    .my-apps-arrow {font-size:10px; color:$linkColor; vertical-align: top; margin-top: 3px;}
   }
 }
+
+.control-bar {background: #f5f5f5; border-bottom:1px solid rgba(229,229,229,0.5); padding: 7px 20px 5px;
+  .bar-icons {background: url('../../assets/imgs/control-bar-icons.png') no-repeat; display: inline-block; width:100px;
+    height:30px;}
+}
+
+.home-page {
+  .navbar {border-bottom: none;
+    .my-apps-drop-down {display: none;}
+    .logo {background-position:  0 -15px;}
+  }
+  .control-bar {display: none;}
+}
+
+
