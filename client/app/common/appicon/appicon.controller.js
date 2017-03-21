@@ -1,7 +1,6 @@
 class AppiconController {
   constructor() {
-    this.name = 'appicon';
+    //this.name = 'appicon';
   }
 }
-
 export default AppiconController;

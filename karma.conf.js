@@ -1,3 +1,4 @@
+const path = require('path');
 module.exports = function (config) {
   config.set({
     // base path used to resolve all patterns
@@ -16,10 +17,13 @@ module.exports = function (config) {
     plugins: [
       require("karma-chai"),
       require("karma-chrome-launcher"),
+      require("karma-phantomjs-launcher"),
       require("karma-mocha"),
       require("karma-mocha-reporter"),
       require("karma-sourcemap-loader"),
-      require("karma-webpack")
+      require("karma-webpack"),
+      require("istanbul-instrumenter-loader"),
+      require("karma-coverage-istanbul-reporter")
     ],
 
     // preprocess matching files before serving them to the browser
@@ -33,7 +37,15 @@ module.exports = function (config) {
           { test: /\.js/, exclude: [/app\/lib/, /node_modules/], loader: 'babel' },
           { test: /\.html$/, loader: 'raw' },
           { test: /\.(scss|sass)$/, loader: 'style!css!sass' },
-          { test: /\.css$/, loader: 'style!css' }
+          { test: /\.css$/, loader: 'style!css' },
+          {test: /\.(jpg|png|gif)$/ ,loader: 'file-loader'},
+          { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&mimetype=application/font-woff" },
+          { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" },
+          {
+            test: /\.js$/,
+            exclude: [/app\/lib/, /node_modules/, /\.spec\.js$/],
+            loader: 'istanbul-instrumenter-loader!babel'
+          }
         ]
       }
     },
@@ -43,7 +55,21 @@ module.exports = function (config) {
     },
 
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['mocha'],
+    reporters: ['mocha', 'coverage-istanbul'],
+
+    coverageIstanbulReporter: {
+      reports: [ 'html' ],
+      dir: path.join(__dirname, 'coverage'),
+      fixWebpackSourcePaths: true,
+      'report-config': {
+
+        // all options available at: https://github.com/istanbuljs/istanbul-reports/blob/590e6b0089f67b723a1fdf57bc7ccc080ff189d7/lib/html/index.js#L135-L137
+        html: {
+          // outputs the report in ./coverage/html
+          subdir: 'html'
+        }
+      },
+    },
 
     // web server port
     port: 9876,
@@ -61,6 +87,7 @@ module.exports = function (config) {
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
     browsers: ['Chrome'],
+    //browsers: ['PhantomJS'],
 
     // if true, Karma runs tests once and exits
     singleRun: true
