@@ -1,7 +1,16 @@
 
 <div class="home">
   <div class="app-icon-container">
-    <appIcon alt="My Apps" link="myapps" src="{{$ctrl.myAppsIcon}}" title="My Apps"></appIcon>
-    <appIcon alt="Anayltics" link="myapps" src="{{$ctrl.anaylticsIcon}}" title="App Analytics"></appIcon>
+    <ul class="icon-list">
+      <li class="icon-list-item" ng-repeat="icon in $ctrl.icons">
+        <appIcon
+          alt="{{icon.name}}"
+          link="{{icon.link}}"
+          src="{{icon.iconSrc}}"
+          title="{{icon.name}}">
+        </appIcon>
+      </li>
+    </ul>
+
   </div>
 </div>

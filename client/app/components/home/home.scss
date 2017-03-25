@@ -1,4 +1,8 @@
 .home {
   .app-icon-container {width:80%; margin: 120px auto 0 auto;}
-   appicon {width: 25%; float:left; margin-right: 20px;}
+  .icon-list {display:flex; flex-flow:row wrap; list-style: none; justify-content: flex-start;
+    .icon-list-item {width: 150px; margin:0 30px 15px;}
+
+
+  }
 }
