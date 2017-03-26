@@ -1,7 +1,8 @@
 class MyappsController {
-  constructor(myAppsApi) {
+  constructor(api) {
     this.name = 'myapps';
-    myAppsApi.fetchMyApps().then((res) => {
+    this.apps = [];
+    api.fetchMyApps().then((res) => {
       if (res && res.data && Array.isArray(res.data)) {
         this.apps = res.data;
       }
@@ -14,5 +15,5 @@ class MyappsController {
   }
 }
 
-MyappsController.$inject = ['myAppsApi'];
+MyappsController.$inject = ['api'];
 export default MyappsController;

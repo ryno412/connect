@@ -6,6 +6,11 @@
     <h2 class="my-apps-drop-down-heading">My Apps <i class="fa fa-chevron-down my-apps-arrow" aria-hidden="true"></i></h2>
   </div>
 
+  <div ng-show="$ctrl.showAppDetails" class="app-details">
+    <span class="nav-app-icon-default"></span>
+    <h2 class="nav-app-name">{{$ctrl.currentAppName}}</h2>
+  </div>
+
 
 </nav>
 <div class="control-bar">

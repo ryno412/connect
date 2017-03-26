@@ -9,8 +9,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 
-app.route('/api/api-my-app').get(function (req, res) {
-  res.send([
+const apps = [
     {
       id:1,
       icon: 'default',
@@ -27,7 +26,22 @@ app.route('/api/api-my-app').get(function (req, res) {
       version: '1.0',
       submissionState: 'Review'
     }
-  ])
+]
+
+app.route('/api/api-my-app').get(function (req, res) {
+  res.send(apps)
+});
+
+app.route('/api/app-details/:id').get(function (req, res) {
+  const id = req.params.id;
+  if (id && apps[id -1]) {
+    res.send(apps[id -1])
+  }
+  else {
+    res.sendStatus(400).send({
+      msg: "No App with that id"
+    })
+  }
 });
 
 

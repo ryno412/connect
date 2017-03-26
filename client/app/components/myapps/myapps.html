@@ -1,11 +1,11 @@
 <div class="my-apps-container">
   <ul class="my-apps-list">
     <li ng-repeat="app in $ctrl.apps" class="app-list-item">
-      <a class="app-details-link" ng-href="/app-details/{{app.id}}">
+      <a class="app-details-link" ng-href="/app-detail/{{app.id}}">
         <span class="icon {{app.icon}}"></span>
         <h2 class="app-name">{{app.name}}</h2>
       </a>
-      <a ng-href="/app-version/{{app.id}}" class="app-version-link">
+      <a ng-href="app-version/{{app.id}}" class="app-version-link">
         <span class="circle"></span>
         <span class="app-type">{{app.type}}</span>
         <span class="app-version">{{app.version}}</span>
