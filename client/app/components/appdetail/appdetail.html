@@ -1,3 +1,36 @@
-<div>
-  <h1>{{ $ctrl.name }}</h1>
+<div class="app-details">
+
+  <div class="side-nav">
+    <h2>App Store Information</h2>
+    <ul class="app-store-nav">
+      <li><a href="#">App Information</a></li>
+      <li><a href="#">Pricing and Availability</a></li>
+    </ul>
+    <h3 class="app-store-type">{{$ctrl.currentAppDetails.type}}</h3>
+    <div class="app-submission-state">{{$ctrl.currentAppDetails.submissionState}}</div>
+    <div class="platform-link">
+      <a href="#">Version or Platform</a>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="heading-container">
+      <h2 class="main-heading">App Information</h2>
+      <p>This information is used for all platforms of this app. Any changes will be released with your next app version.</p>
+    </div>
+
+    <div class="locale-container">
+      <h2>Localizable Information</h2>
+      <label>Name</label>
+      <input type="text"/>
+      <label>Privacy Policy Url</label>
+      <input type="text" placeholder="http://example.com (optional)">
+    </div>
+
+    <div class="general-info-container">
+      <h2>General Information</h2>
+    </div>
+
+  </div>
+
 </div>

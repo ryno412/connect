@@ -15,8 +15,6 @@ class NavbarController {
       this.currentAppName = null;
       this.currentAppIcon = null;
     }
-
-    console.log("APP NAME", appDetails)
   }
 }
 

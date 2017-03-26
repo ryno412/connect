@@ -1,24 +1,24 @@
 class AppdetailController {
-  constructor($stateParams, api, $rootScope, $transitions, $scope) {
-    console.log("PRAMS", $stateParams)
+  constructor($stateParams, api, $rootScope, $scope) {
     this.name = 'appdetail';
     api.fetchAppDetail($stateParams.id).then((res) => {
-      console.log("$$$", res)
-      console.log('$$$$$$')
-      $rootScope.currentAppDetails = res.data;
+      if (res && res.data) {
+        this.currentAppDetails = res.data;
+        $rootScope.currentAppDetails = this.currentAppDetails;
+      }
+      else {
+        throw new Error('No app details in response');
+      }
+    }).catch((e) => {
+      console.log(e);
     })
 
     $scope.$on('$destroy', ()=> {
-      console.log('distroyed')
       $rootScope.currentAppDetails = null;
     })
 
-    $transitions.onExit({foo: 'bar'}, (match, cb) => {
-      //console.log("EXIT", match, cb)
-      true;
-    })
   }
 }
 
-AppdetailController.$inject = ['$stateParams', 'api', '$rootScope', '$transitions', '$scope'];
+AppdetailController.$inject = ['$stateParams', 'api', '$rootScope', '$scope'];
 export default AppdetailController;
