@@ -4,7 +4,7 @@ import salesAndTrendsIconSrc from '../../assets/imgs/salesTrendsIcon.png';
 import paymentsAndReportsIconSrc from '../../assets/imgs/paymentsIcon.png';
 import userIconSrc from '../../assets/imgs/userRolesIcon.png';
 import bankIconSrc from '../../assets/imgs/taxBankingIcon.png';
-import helpIconSrc from '../../assets/imgs/helpIcon.png';
+import helpIconSrc from '../../assets/imgs/resHelpIcon.png';
 
 class HomeController {
   constructor(/*$rootScope*/) {

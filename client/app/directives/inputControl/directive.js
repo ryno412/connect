@@ -14,7 +14,7 @@ let inputDirective = function (){
       myvalue: '='
     },
     template: `<div class="input-control-container">
-      <label class="input-control-label" {{controlname}}">{{label}}</label>
+      <label class="input-control-label" {{controlname}}">{{label}} <span class="help-icon"></span></label>
       <input class="input-control" name="{{controlname}}" type="text" ng-model="myvalue" placeholder="{{placeholder}}" />
       </div>`,
     link  : function(scope, elem, attrs) {

@@ -1,10 +1,13 @@
 @import "../../common/common";
 .app-details {display: flex; box-sizing: border-box;
+
   /*-- Section Styles --*/
-  .section {padding: 10px 10px 45px 10px; margin-bottom: 20px; border-bottom: 1px solid $borderColor;
+  .section {padding: 10px 20px 45px 10px; margin-bottom: 20px; border-bottom: 1px solid $borderColor;
     .section-heading {font-size:20px; font-weight: 300; margin-bottom: 20px; margin-top: 0;}
-    &::after {display: table; clear:both; content:'';}
+    dt {font-weight: 500; font-size:14px; margin: 15px 0 5px 0;}
+    dd {font-weight: 200;}
   }
+
   /*-- Side Nav --*/
   .side-nav {flex: 0 0 250px; padding: 20px 0; border-right: 1px solid $borderColor; overflow: hidden;
     .side-nav-heading, .app-store-type { font-size: 11px; text-transform: uppercase; color: #bababa; margin-left: 35px;}
@@ -22,10 +25,32 @@
   /*-- Main Content Section --*/
   .main-content { padding: 25px; padding-right: 0; flex:1 1;
     .app-info-content {color:#929292;}
-    .wide-form-control { float: left; width: 50%; padding-right: 25px; box-sizing: border-box;
-      &:last-child {padding-left: 25px; padding-right: 0;}
+    .form-section {display: flex;
+      .wide-form-control { width: 50%; padding-right: 25px; box-sizing: border-box;
+        & + .wide-form-control {padding-left: 25px; padding-right: 0;}
+        label {display: block; margin-bottom: 10px; font-size:14px; font-weight: 500;}
+      }
     }
-    .bundle-info-container { clear: both; }
+    .lang-section {
+      dt {margin-top: 0;}
+      dd {margin-bottom: 10px;}
+    }
+    .cat-select {margin-bottom: 5px;}
   }
 
+}
+
+/* from itc :) */
+.custom-select {
+  width: 100%;
+  height: 30px;
+  background: #fff url('../../assets/imgs/select-bg.png') center right no-repeat !important;
+  -webkit-appearance: none;
+  -khtml-appearance: none;
+  -moz-appearance: none;
+  background-size: 24px 16px !important;
+  border: 1px solid #d9d9d9;
+  border-radius: 3px;
+  padding: 2px 25px 2px 8px;
+  margin-top: 2px;
 }

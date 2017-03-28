@@ -1,6 +1,6 @@
 @import '../common';
 
-.navbar {height:17px; padding:15px 25px; border-bottom: 1px solid $borderColor; display: flex; flex-flow: row nowrap;
+.navbar {height:50px; padding:15px 25px; border-bottom: 1px solid $borderColor; display: flex; flex-flow: row nowrap;
   .logo {display: inline-block; background: url('../../assets/imgs/logo.png') no-repeat;
     background-size:134px 30px; text-indent: -9999px; width:140px; float:left; margin-right:5px;
     .logo-name {margin: 0; font-size:16px;}
