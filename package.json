@@ -3,11 +3,13 @@
   "version": "0.0.1",
   "description": "Angular App",
   "main": "index.js",
+  "engine": "node 6.9.4",
   "dependencies": {
     "angular": "^1.5.0",
     "angular-ui-router": "^1.0.0-beta.1",
     "font-awesome": "^4.7.0",
-    "normalize.css": "^3.0.3"
+    "normalize.css": "^3.0.3",
+    "serve-static": "^1.12.1"
   },
   "devDependencies": {
     "angular-mocks": "^1.5.0",
