@@ -1,11 +1,12 @@
 <div class="app-details">
 
   <div class="side-nav">
-    <h2>App Store Information</h2>
+    <h2 class="side-nav-heading">App Store Information</h2>
     <ul class="app-store-nav">
-      <li><a href="#">App Information</a></li>
-      <li><a href="#">Pricing and Availability</a></li>
+      <li class="app-store-nav-item"><a href="#" class="active">App Information</a></li>
+      <li class="app-store-nav-item"><a href="#">Pricing and Availability</a></li>
     </ul>
+
     <h3 class="app-store-type">{{$ctrl.currentAppDetails.type}}</h3>
     <div class="app-submission-state">{{$ctrl.currentAppDetails.submissionState}}</div>
     <div class="platform-link">
@@ -14,21 +15,40 @@
   </div>
 
   <div class="main-content">
-    <div class="heading-container">
+    <div class="heading-container section">
       <h2 class="main-heading">App Information</h2>
-      <p>This information is used for all platforms of this app. Any changes will be released with your next app version.</p>
+      <p class="app-info-content">This information is used for all platforms of this app. Any changes will be released with your next app version.</p>
     </div>
 
-    <div class="locale-container">
-      <h2>Localizable Information</h2>
-      <label>Name</label>
-      <input type="text"/>
-      <label>Privacy Policy Url</label>
-      <input type="text" placeholder="http://example.com (optional)">
+    <div class="locale-container section">
+      <h3 class="section-heading">Localizable Information</h3>
+      <div class="wide-form-control">
+        <inputcontrol label="Name" controlname="name-control" myvalue="$ctrl.foo"/>
+      </div>
+      <div class="wide-form-control">
+        <inputcontrol label="Privacy Policy" controlname="policy-control" placeholder="http://example.com (optional)" myvalue="$ctrl.bar"/>
+      </div>
+
     </div>
 
-    <div class="general-info-container">
-      <h2>General Information</h2>
+    <div class="general-info-container section">
+
+      <h3 class="section-heading">General Information</h3>
+      <div class="wide-form-control">
+        <inputcontrol label="Bundle Id" controlname="bundle-control" placeholder="your bundle id" myvalue="$ctrl.bar"/>
+      </div>
+      <div class="bundle-info-container">
+        <dl class="inline-def">
+          <dt>Your bundle id</dt>
+          <dd>com.coolname.hero</dd>
+        </dl>
+
+        <dl>
+          <dt>Skew</dt>
+          <dd>com.coolname.hero</dd>
+        </dl>
+
+      </div>
     </div>
 
   </div>

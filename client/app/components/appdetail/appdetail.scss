@@ -1,1 +1,31 @@
-.app-details{display:flex; height: 85vh;}
+@import "../../common/common";
+.app-details {display: flex; box-sizing: border-box;
+  /*-- Section Styles --*/
+  .section {padding: 10px 10px 45px 10px; margin-bottom: 20px; border-bottom: 1px solid $borderColor;
+    .section-heading {font-size:20px; font-weight: 300; margin-bottom: 20px; margin-top: 0;}
+    &::after {display: table; clear:both; content:'';}
+  }
+  /*-- Side Nav --*/
+  .side-nav {flex: 0 0 250px; padding: 20px 0; border-right: 1px solid $borderColor; overflow: hidden;
+    .side-nav-heading, .app-store-type { font-size: 11px; text-transform: uppercase; color: #bababa; margin-left: 35px;}
+    .app-store-nav { list-style: none;
+      .app-store-nav-item a { padding: 12px 40px; display: inline-block; font-size: 14px; width: 100%; color: $contentColor;
+        &.active { background: deepskyblue; color: #fff; }
+      }
+    }
+    .platform-link, .app-submission-state { padding-left: 40px;}
+    .platform-link { margin-top: 20px;}
+    .app-store-type {margin-bottom: 20px;}
+    .app-submission-state { padding-bottom: 20px; border-bottom: 1px solid $borderColor; font-size: 14px; text-overflow: ellipsis;}
+  }
+
+  /*-- Main Content Section --*/
+  .main-content { padding: 25px; padding-right: 0; flex:1 1;
+    .app-info-content {color:#929292;}
+    .wide-form-control { float: left; width: 50%; padding-right: 25px; box-sizing: border-box;
+      &:last-child {padding-left: 25px; padding-right: 0;}
+    }
+    .bundle-info-container { clear: both; }
+  }
+
+}
