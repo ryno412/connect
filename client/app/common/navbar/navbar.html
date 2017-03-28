@@ -1,18 +1,32 @@
 <nav class="navbar">
-  <div class="logo">
+  <div class="logo" ui-sref="home">
     <h1 class="logo-name"><a ui-sref="home">Connect</a></h1>
   </div>
   <div class="my-apps-drop-down">
     <h2 class="my-apps-drop-down-heading">My Apps <i class="fa fa-chevron-down my-apps-arrow" aria-hidden="true"></i></h2>
   </div>
 
-  <div ng-show="$ctrl.showAppDetails" class="app-details">
+  <div ng-show="$ctrl.showAppDetails" class="app-details-nav">
     <span class="nav-app-icon-default"></span>
     <h2 class="nav-app-name">{{$ctrl.currentAppName}} <i class="fa fa-chevron-down nav-current-app-arrow" aria-hidden="true"></i></h2>
   </div>
 
+  <div class="user-info">
+    <div class="user-name-and-co-container">
+      <a href="/coverage">Ryan Ford</a>
+      <h2 class="user-info-co-name">A Company LLC</h2>
+    </div>
+    <i class="fa fa-chevron-down user-info-arrow" aria-hidden="true"></i>
+    <span class="lg-help-icon"></span>
+  </div>
 
 </nav>
 <div class="control-bar">
   <span class="bar-icons"></span>
+  <ul class="control-bar-sub-nav">
+    <li><a class="active" href="/">App Store</a></li>
+    <li><a href="/">Features</a></li>
+    <li><a href="/">TestFlight</a></li>
+    <li><a href="/">Activity</a></li>
+  </ul>
 </div>
