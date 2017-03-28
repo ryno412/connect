@@ -22,10 +22,10 @@
       <h3 class="section-heading">Localizable Information</h3>
       <div class="form-section">
         <div class="wide-form-control">
-          <inputcontrol label="Name" controlname="name-control" myvalue="$ctrl.foo"/>
+          <inputcontrol label="Name" controlname="name-control" value="$ctrl.currentAppDetails.name"/>
         </div>
         <div class="wide-form-control">
-          <inputcontrol label="Privacy Policy" controlname="policy-control" placeholder="http://example.com (optional)" myvalue="$ctrl.bar"/>
+          <inputcontrol label="Privacy Policy" controlname="policy-control" placeholder="http://example.com (optional)" value="$ctrl.privacyInputVal"/>
         </div>
       </div>
     </div>
@@ -34,29 +34,29 @@
       <h3 class="section-heading">General Information</h3>
       <div class="form-section">
         <div class="wide-form-control">
-          <label>Bundle Id</label>
+          <label>Bundle Id <span class="help-icon"></span></label>
           <select class="custom-select">
             <option>Bundle ID</option>
-            <option selected="selected">com.coolname.hero</option>
+            <option selected="selected">com.co.{{$ctrl.appId  | lowercase}}</option>
             <option>something else</option>
           </select>
           <div class="bundle-info-container">
             <dl class="inline-def">
               <dt>Your bundle ID</dt>
-              <dd>com.coolname.hero</dd>
+              <dd>com.co.{{$ctrl.appId  | lowercase}}</dd>
             </dl>
             <dl>
-              <dt>Skew</dt>
-              <dd>com.coolname.hero</dd>
+              <dt>Skew <span class="help-icon"></span></dt>
+              <dd>com.co.{{$ctrl.appId | lowercase}}</dd>
             </dl>
           </div>
         </div>
         <div class="wide-form-control">
           <dl class="lang-section">
-            <dt>Primary Language</dt>
+            <dt>Primary Language <span class="help-icon"></span></dt>
             <dd>English</dd>
           </dl>
-          <label>Category</label>
+          <label>Category <span class="help-icon"></span></label>
           <select class="custom-select cat-select">
             <option>Category</option>
             <option>Books</option>
@@ -74,7 +74,7 @@
             <dd><a href="#">Apple Standard License Agreement</a></dd>
           </dl>
           <dl>
-            <dt>Rating</dt>
+            <dt>Rating <span class="help-icon"></span></dt>
             <dd>No Rating</dd>
           </dl>
         </div>

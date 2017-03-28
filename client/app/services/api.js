@@ -10,13 +10,6 @@ api.factory('api', ['$http',function($http){
     },
     fetchAppDetail: function(id){
       return $http.get(`/api/app-details/${id}`);
-      // return new Promise((resolve, reject) => {
-      //   setTimeout(function () {
-      //     console.log('$$$$$$', "SET TIME OU CALLED")
-      //     return resolve({foo: `bar${id}`})
-      //   },2000)
-
-      // })
     }
   }
   return api;
