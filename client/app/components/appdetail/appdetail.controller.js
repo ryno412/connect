@@ -2,11 +2,6 @@ class AppdetailController {
   constructor($stateParams, api, $rootScope, $scope) {
     this.name = 'appdetail';
     this.privacyInputVal = 'https://somelink.com';
-
-    this.sayFoo = function (){
-      alert(this.currentAppDetails.name)
-    }
-
     api.fetchAppDetail($stateParams.id).then((res) => {
       if (res && res.data) {
         this.currentAppDetails = res.data;

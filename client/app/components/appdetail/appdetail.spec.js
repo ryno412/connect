@@ -4,14 +4,16 @@ import AppdetailComponent from './appdetail.component';
 import AppdetailTemplate from './appdetail.html';
 
 describe('Appdetail', () => {
-  let $rootScope, makeController;
+  let $rootScope, $state, $location, $componentController, $compile, q, deferred;
 
   beforeEach(window.module(AppdetailModule));
-  beforeEach(inject((_$rootScope_) => {
-    $rootScope = _$rootScope_;
-    makeController = () => {
-      return new AppdetailController();
-    };
+  beforeEach(inject(($injector) => {
+    $rootScope = $injector.get('$rootScope');
+    $componentController = $injector.get('$componentController');
+    $state = $injector.get('$state');
+    $location = $injector.get('$location');
+    $compile = $injector.get('$compile');
+    q = $injector.get('$q');
   }));
 
   describe('Module', () => {
@@ -19,12 +21,36 @@ describe('Appdetail', () => {
   });
 
   describe('Controller', () => {
+    let controller, scope, apiService;
+    beforeEach(() => {
+      scope = $rootScope.$new();
+      apiService = {
+        fetchAppDetail : function () {
+           deferred = q.defer();
+            return deferred.promise;
+          }
+      }
+      controller = $componentController('appdetail', {
+        api: apiService,
+        $scope : scope
+      });
+
+    });
     // controller specs
-    // it('has a name property [REMOVE]', () => { // erase if removing this.name from the controller
-    //   let controller = makeController();
-    //   expect(controller).to.have.property('name');
-    // });
-  });
+    it('controller should load data', () => { // erase if removing this.name from the controller
+      let appDetailsMock = {
+        id:1,
+        icon: 'default',
+        name: 'My Cool App',
+        type: 'Watch',
+        version: '1.0',
+        submissionState: 'Prepare for Submission'
+      }
+      deferred.resolve({data:appDetailsMock});
+      scope.$digest()
+      expect(controller.currentAppDetails).to.eql(appDetailsMock);
+    });
+  })
 
   describe('Template', () => {
     // template specs
