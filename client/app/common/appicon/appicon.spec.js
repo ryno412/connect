@@ -3,7 +3,7 @@ import AppiconController from './appicon.controller';
 import AppiconComponent from './appicon.component';
 import AppiconTemplate from './appicon.html';
 
-describe.only('Appicon', () => {
+describe('Appicon', () => {
   let $rootScope, makeController, $state, $location, $componentController, $compile;
 
   beforeEach(window.module(AppiconModule));
@@ -20,21 +20,9 @@ describe.only('Appicon', () => {
     $compile = $injector.get('$compile');
   }));
 
-  // describe('Module', () => {
-  //   // top-level specs: i.e., routes, injection, naming
-  // });
-  //
-  // describe('Controller', () => {
-  //   // controller specs
-  //   it('has a name property [REMOVE]', () => { // erase if removing this.name from the controller
-  //     let controller = makeController();
-  //     expect(controller).to.have.property('name');
-  //   });
-  // });
 
   describe('Template', () => {
     // template specs
-    // tip: use regex to ensure correct bindings are used e.g., {{  }}
     it('should contain a link binding in template', () => {
       expect(AppiconTemplate).to.match(/{{\s?\$ctrl\.link\s?}}/g);
     });
@@ -52,7 +40,7 @@ describe.only('Appicon', () => {
     });
   });
 
-  describe.only('View', () => {
+  describe('View', () => {
     // view layer specs.
     let scope;
 

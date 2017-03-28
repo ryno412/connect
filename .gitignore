@@ -4,6 +4,6 @@
 node_modules
 .settings
 *.log
-#dist/
+#dist/ need for heroku to serve
 .idea
-coverage
+#coverage need for heroku to serve
