@@ -18,7 +18,7 @@ class AppdetailController {
     }).catch((e) => {
       console.log(e);
     });
-    $scope.$on('$destroy', ()=> {
+    $scope.$on('$destroy', () => {
       $rootScope.currentAppDetails = null;
     });
   }

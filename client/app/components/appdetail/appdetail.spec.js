@@ -52,13 +52,6 @@ describe('Appdetail', () => {
     });
   })
 
-  describe('Template', () => {
-    // template specs
-    // tip: use regex to ensure correct bindings are used e.g., {{  }}
-    // it('has name in template [REMOVE]', () => {
-    //   expect(AppdetailTemplate).to.match(/{{\s?\$ctrl\.name\s?}}/g);
-    // });
-  });
 
   describe('Component', () => {
       // component/directive specs

@@ -10,7 +10,7 @@ class MyappsController {
         throw new Error('No Apps in response');
       }
     }).catch(e => {
-      console.log("E", e);
+      console.log(e);
     })
   }
 }

@@ -13,13 +13,10 @@ let inputDirective = function (){
       <input class="input-control" name="{{controlname}}" type="text" ng-model="value" placeholder="{{placeholder}}" />
       </div>`,
     link  : function(scope, elem, attrs) {
-      //scope.label = attrs.label;
-
       scope.format = 'placeholder'
       scope.controlname = attrs.controlname;
     }
   }
 };
 
-//inputDirective.$inject = ['$scope']
 export default inputDirective;
