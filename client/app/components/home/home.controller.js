@@ -38,7 +38,7 @@ class HomeController {
       link: 'myapps'
     },
     {
-      name: 'Aggrements, Tax, and Banking',
+      name: 'Agreements, Tax, and Banking',
       iconSrc: bankIconSrc,
       link: 'myapps'
     },
